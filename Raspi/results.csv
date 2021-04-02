@@ -1,0 +1,6 @@
+timestamp,asset,smartServo1Angle,smartServo1Temp,smartServo1Current,smartServo1Voltage,smartServo2Angle,smartServo2Temp,smartServo2Current,smartServo2Voltage,smartServo3Angle,smartServo3Temp,smartServo3Current,smartServo3Voltage
+2021-04-02 09:06:30.510549,voltage
+2021-04-02 09:06:31.510896,voltage
+2021-04-02 09:06:32.511472,voltage
+2021-04-02 09:06:33.512267,voltage
+2021-04-02 09:06:34.512837,voltage
