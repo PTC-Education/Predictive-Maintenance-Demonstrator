@@ -1,15 +1,13 @@
-#import serial
+import serial
 import json
 import time #https://www.gtkdb.de/index_31_2492.html#:~:text=Um%20in%20einem%20Python%2DSkript,in%20einen%20String%20konvertiert%20werden.
 import csv
 import datetime
 
 
-#arduino = serial.Serial(port='/dev/ttyUSB0', baudrate=115200, timeout=.1)
+arduino = serial.Serial(port='/dev/ttyUSB0', baudrate=1000000, timeout=.1)
 
 def readFeedback():
-    #arduino.write(bytes(x, 'utf-8'))
-    #time.sleep(0.05)
     data = arduino.readline()
     return data
     
@@ -23,15 +21,16 @@ def processing_loop(csvfile):
 
 
     while True:
-        #feedbackString = readFeedback()
+        feedbackString = readFeedback()
         #print(feedbackString) # Debugging message
-        #feedbackJson = json.loads(feedbackString)
+        feedbackJson = json.loads(feedbackString)
+        print(feedbackJson["t"])
         csv_writer.writerow([datetime.datetime.now(), "JA_EMS_Demonstrator_Thing",
-              feedbackJson["smartServo1Angle"], feedbackJson["smartServo1Temp"], feedbackJson["smartServo1Current"], feedbackJson["smartServo1Voltage"],
-              feedbackJson["smartServo2Angle"], feedbackJson["smartServo2Temp"], feedbackJson["smartServo2Current"], feedbackJson["smartServo2Voltage"],
-              feedbackJson["smartServo3Angle"], feedbackJson["smartServo3Temp"], feedbackJson["smartServo3Current"], feedbackJson["smartServo3Voltage"]])
-        csvfile.flush()
-        time.sleep(1)
+              feedbackJson["1A"], feedbackJson["1T"], feedbackJson["1C"], feedbackJson["1V"],
+              feedbackJson["2A"], feedbackJson["2T"], feedbackJson["2C"], feedbackJson["2V"],
+              feedbackJson["3A"], feedbackJson["3T"], feedbackJson["3C"], feedbackJson["3V"]])
+        #csvfile.flush()
+        
 
 
 with open('results.csv', 'w', newline='') as csvfile:

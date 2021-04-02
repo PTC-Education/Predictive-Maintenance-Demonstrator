@@ -18,9 +18,10 @@ class Demonstrator
   public:
     Demonstrator();
     void updateSensorValues();
-    void sendSensorValuesToSerial();
-  private:
+    void sendSensorValuesToSerial(unsigned long time);
     MeSmartServo* smartServoConn;
+  private:
+    
     float smartServo1[4] = {0,0,0,0}; // Angle, Temp, Current, Voltage
     float smartServo2[4] = {0,0,0,0}; 
     float smartServo3[4] = {0,0,0,0};
@@ -59,26 +60,36 @@ void Demonstrator::updateSensorValues()
   //Serial.println(String(smartServoConn->getAngleRequest(1)) );
 }
 
-void Demonstrator::sendSensorValuesToSerial()
+void Demonstrator::sendSensorValuesToSerial(unsigned long time)
 {
-  DynamicJsonDocument doc(1024);
+  DynamicJsonDocument smartServoDoc(128);
+  DynamicJsonDocument smartServo2Doc(60);
+  DynamicJsonDocument smartServo3Doc(60);
 
-  doc["smartServo1Angle"] = smartServo1[0];
-  doc["smartServo1Temp"] = smartServo1[1];
-  doc["smartServo1Current"] = smartServo1[2];
-  doc["smartServo1Voltage"] = smartServo1[3];
+  smartServoDoc["1A"] = smartServo1[0];
+  smartServoDoc["1T"] = smartServo1[1];
+  smartServoDoc["1C"] = smartServo1[2];
+  smartServoDoc["1V"] = smartServo1[3];
+  //serializeJson(smartServo1Doc, Serial);
+  //Serial.print('\n');
+  
+  smartServoDoc["2A"] = smartServo2[0];
+  smartServoDoc["2T"] = smartServo2[1];
+  smartServoDoc["2C"] = smartServo2[2];
+  smartServoDoc["2V"] = smartServo2[3];
+  //serializeJson(smartServo2Doc, Serial);
+  //Serial.print('\n');
 
-  doc["smartServo2Angle"] = smartServo2[0];
-  doc["smartServo2Temp"] = smartServo2[1];
-  doc["smartServo2Current"] = smartServo2[2];
-  doc["smartServo2Voltage"] = smartServo2[3];
+  smartServoDoc["3A"] = smartServo3[0];
+  smartServoDoc["3T"] = smartServo3[1];
+  smartServoDoc["3C"] = smartServo3[2];
+  smartServoDoc["3V"] = smartServo3[3];
 
-  doc["smartServo3Angle"] = smartServo3[0];
-  doc["smartServo3Temp"] = smartServo3[1];
-  doc["smartServo3Current"] = smartServo3[2];
-  doc["smartServo3Voltage"] = smartServo3[3];
+  smartServoDoc["t"] = time;
+  serializeJson(smartServoDoc, Serial);
+  Serial.print('\n');
 
-  serializeJson(doc, Serial);
+  
 }
 
 
@@ -98,23 +109,37 @@ void callback_test(uint8_t servoNum)
 */
 
 Demonstrator* drawingRobot;
+unsigned long lastTime = 0;
+unsigned long curTime = 0;
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(1000000);
   //Serial.println("setup!");
   drawingRobot = new Demonstrator();
   //loopTime = millis();
   //smartServoConn.moveTo(1,0,50);
   //smartServoConn.moveTo(2,0,50);
   delay(2000);
+  lastTime = millis();
 }
 int i =0;
 
+
+
 void loop()
 {
+  curTime = millis();
   drawingRobot->updateSensorValues();
-  drawingRobot->sendSensorValuesToSerial();
+  drawingRobot->sendSensorValuesToSerial(curTime-lastTime);
+  lastTime = curTime;
+  //delay(10);
+  //drawingRobot->smartServoConn->moveTo(1,100,0.1);
+  //1 ist von 60 bis 70safe
   
+  //drawingRobot->smartServoConn->moveTo(2,-200,0.1);
+  //2 ist von -170 bis 200 safe   200 ist rechts
+  //drawingRobot->smartServoConn->moveTo(3,-145,0.1);
+  //3 ist von -111 bis 120 safe   120 ist unten
   
   
   
