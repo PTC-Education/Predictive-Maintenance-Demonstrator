@@ -15,7 +15,7 @@ def readFeedback():
 def processing_loop(csvfile):
     HEADER = ["timestamp", "asset", "smartServo1Angle", "smartServo1Temp", "smartServo1Current", "smartServo1Voltage",
               "smartServo2Angle", "smartServo2Temp", "smartServo2Current", "smartServo2Voltage",
-              "smartServo3Angle", "smartServo3Temp", "smartServo3Current", "smartServo3Voltage" , "time"]
+              "smartServo3Angle", "smartServo3Temp", "smartServo3Current", "smartServo3Voltage" , "time", "isBroken"]
     csv_writer = csv.writer(csvfile)
     csv_writer.writerow(HEADER)
 
@@ -28,7 +28,7 @@ def processing_loop(csvfile):
         csv_writer.writerow([datetime.datetime.now(), "JA_EMS_Demonstrator_Thing",
               feedbackJson["1A"], feedbackJson["1T"], feedbackJson["1C"], feedbackJson["1V"],
               feedbackJson["2A"], feedbackJson["2T"], feedbackJson["2C"], feedbackJson["2V"],
-              feedbackJson["3A"], feedbackJson["3T"], feedbackJson["3C"], feedbackJson["3V"], feedbackJson["t"]])
+              feedbackJson["3A"], feedbackJson["3T"], feedbackJson["3C"], feedbackJson["3V"], feedbackJson["t"], 0])
         #csvfile.flush()
         
 
