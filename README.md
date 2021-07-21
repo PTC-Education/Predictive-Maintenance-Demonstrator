@@ -1,4 +1,4 @@
-# UNDER DEVELOPMENT, DOCUMENTATION WILL BE COMPLETED SOON
+# UNDER DEVELOPMENT, DOCUMENTATION AND FINAL VERSION OF SCRIPTS WILL BE ADDED SOON
 
 # Predictive-Maintenance-Demonstrator
 Includes the software and tutorials for the Predictive Maintenance Demonstrator project.
