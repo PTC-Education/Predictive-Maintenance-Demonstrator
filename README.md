@@ -9,6 +9,7 @@ In addition, a Google Colab document is provided to make Thingworx Analytics ava
 
 # Structure:
 1. guides
+
 ⋅⋅⋅ In this directory you will find the created guides for the use of Thingworx Analytics.
 
 
