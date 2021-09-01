@@ -3,12 +3,12 @@
 This guide serves as an introductory exercise for Thingworx Analytics. This example is intended to familiarize new users with the interface and to teach them how to train a machine learning model and run predictions. 
 The dataset used in this guide was generated using the following demonstrator:
 
-<img src="/./misc/demonstrator_overview.jpg" alt="3-axis robot arm" style="zoom: 50%;" />
+<img src="/./misc/demonstrator_overview.jpg" style="zoom: 50%;" />
 
 For more detailed information on the hardware, please navigate to the physical_demonstrator folder in this git. 
 The Servo3 of the demonstrator is supposed to change its position when an additional force is applied to Servo1. In the following video you can see the live demonstration:
 
-<img src="/./misc/predictive_maintenance_data_collection.gif" alt="3-axis robot arm" style="zoom:100%;" />
+<img src="/./misc/predictive_maintenance_data_collection.gif" style="zoom:100%;" />
 
 ## Requirements:
 
