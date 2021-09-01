@@ -2,9 +2,9 @@
 
 A 3-axis robot arm was used for the guides and creation of the datasets. Three pieces of [makeblock Smart Servo MS-12A](https://www.makeblock.com/project/smart-servo-ms-12a) are used. The brackets, screws and nuts are included. Only a base is needed on which the arm can be mounted. The [makeblock me-auriga](https://www.makeblock.com/project/me-auriga) board was used but it is compatible with the Arduino Mega 2560 and other Arduinos can be used as well. The following figure shows the basic setup:
 
-<img src="C:\Users\Juergen\Documents\GitHub\Predictive-Maintenance-Demonstrator\misc\demonstrator_overview.jpg" alt="3-axis robot arm" style="zoom:50%;" />
+<img src="/./misc/demonstrator_overview.jpg" style="zoom:100%;" />
 
-<img src="C:\Users\Juergen\Documents\GitHub\Predictive-Maintenance-Demonstrator\misc\demonstrator_technology_map.png" alt="3-axis robot arm" style="zoom:50%;" />
+<img src="/./misc/demonstrator_technology_map.png" style="zoom:50%;" />
 
 This section of the repository contains the Arduino code to run the Thingworx Analytics Guides with this hardware. If you want to use other hardware, these files serve as information regarding the data exchange for the python scripts. Data is transferred via the serial interface using the JSON format.
 
