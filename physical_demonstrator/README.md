@@ -12,7 +12,7 @@ This section of the repository contains the Arduino code to run the Thingworx An
 
 Copy the .ino files in your Arduino Sketchbook folder and install the required libraries (libraries and the project folder need to be in the same directory). Then build and upload the code to your Arduino. For this project the Arduino IDE was used.
 
-For the [ThingworxAnalyticsIntroduction](../guides/ThingworxAnalyticsIntroduction/Create an Analytics model and use it with a Thing.pdf)-guide use the [ml_demo.ino](ml_demo.ino) file.
+For the [ThingworxAnalyticsIntroduction](../guides/ThingworxAnalyticsIntroduction/CreateAnalyticsModel)-guide use the [ml_demo.ino](ml_demo.ino) file.
 For the [ThingworxAnalyticsTimeSeriesPrediction](../guides/ThingworxAnalyticsTimeSeriesPrediction/ThingworxAnalyticsTimeSeriesPredictionExample.pdf)-guide use the [predictive_maintenance_data_collection.ino](predictive_maintenance_data_collection.ino) file.
 
 ## Requirements:
