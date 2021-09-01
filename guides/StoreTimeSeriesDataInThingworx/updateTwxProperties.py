@@ -6,13 +6,12 @@ source: https://stackoverflow.com/questions/27981545/suppress-insecurerequestwar
 from requests.packages.urllib3.exceptions import InsecureRequestWarning 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-# 'appKey': '37376417-3c5f-4356-a4a6-023f03821ad4' ,
 
 def callToTwx(propertyValue):
-    #url = 'http://localhost:8080/Thingworx'
-    headers = { 'Content-Type': 'application/json',  'accept': 'application/json'}
-    payload = {'servo1Temperature': propertyValue}
-    response = requests.get('http://localhost:8080/Thingworx/JA_EMS_Demonstrator_Thing/Properties/servo1Temperature', headers=headers, verify=False)
+    url = 'http://localhost:8080/Thingworx'
+    headers = { 'Content-Type': 'application/json',  'accept': 'application/json', 'appKey': 'Insert Key ID from your Application Key'}
+    payload = {'Temperature': propertyValue}
+    response = requests.get('/Things/Initials_Temperature_Sensor/Properties/*', headers=headers, json=payload verify=False)
     return response
 
 try:
@@ -20,7 +19,7 @@ try:
         print("temperature: " , temperature , callToTwx(temperature))
         
 except KeyboardInterrupt:
-    pass
+    exit()
 
     
     
