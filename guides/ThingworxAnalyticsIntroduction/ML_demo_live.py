@@ -12,7 +12,8 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 arduino = serial.Serial(port='COM4', baudrate=1000000, timeout=.03) # change to the USB port of the plugged in demonstrator
 time.sleep(3)
-url = 'https://pp-2101111403aw.portal.ptc.io/Thingworx/Things/JA_Machine_Learning_Demo' #change "pp-2101111403aw.portal.ptc.io" part to the url of your Thingworx instance, do not edit the other parts
+url = 'https://pp-2101111403aw.portal.ptc.io' #change "pp-2101111403aw.portal.ptc.io" part to the url of your Thingworx instance, do not edit the other parts
+url = url + '/Thingworx/Things/JA_Machine_Learning_Demo'
 headers = { 'Content-Type': 'application/json',  'accept': 'application/json', 'appKey': 'Insert your appKey here, example: "f4b00336-e8cd-4042-9743-b75ad3fffeef"'}
 
 def readFeedback():

@@ -5,7 +5,6 @@ import requests
 # source: https://stackoverflow.com/questions/27981545/suppress-insecurerequestwarning-unverified-https-request-is-being-made-in-pytho
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
-
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # open json file containing the appKey
@@ -13,14 +12,18 @@ json_file = open("config.json")
 config = json.load(json_file)
 json_file.close()
 
-url = 'https://pp-2101111403aw.portal.ptc.io/Thingworx/Things/JA_Generic_Analytics_Thing/Services/RunPrediction'
+url = 'https://pp-2101111403aw.portal.ptc.io' # change to your Thingworx instance
+modelUri = "7b251012-9e69-436a-863f-215497c4a031" # supply the modelUri from the trainAnalyticsModel.py script
+
+
+url = url + 'Thingworx/Things/JA_Generic_Analytics_Thing/Services/RunPrediction'
 headers = {'Content-Type': 'application/json', 'accept': 'application/json',
            "appKey": config["appKey"]} 
 
 
 def call_thingworx_service(data):
     payload = {"goal": "goal",
-               "modelUri": "7b251012-9e69-436a-863f-215497c4a031",
+               "modelUri": modelUri,
                "scoringData": {
                    "dataShape": {
                        "fieldDefinitions": {
@@ -42,13 +45,14 @@ def call_thingworx_service(data):
 
 
 # Define a dictionary containing scoring data
+# if you need to send multiple rows please refer to trainAnalyticsModel.py line 143-149
 feature1Value = 2
 data = {'rows': [{'feature1': feature1Value}]}
 
 response = call_thingworx_service(data)
 if response.status_code == 200:
     result = json.loads(response.text)
-    goal = result["rows"][0]["goal"]  # save to file?
+    goal = result["rows"][0]["goal"]
     print("The predicted value for the goal is: " + goal)
 else:
     print("Request failed with error code: " + str(response))

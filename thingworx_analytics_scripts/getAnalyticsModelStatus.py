@@ -12,10 +12,13 @@ json_file = open("config.json")
 config = json.load(json_file)
 json_file.close()
 
-url = 'https://pp-2101111403aw.portal.ptc.io/Thingworx/Things/JA_Generic_Analytics_Thing/Services/GetModelStatus'
+url = 'https://pp-2101111403aw.portal.ptc.io' # change to your Thingworx instance
+modelUri = "7b251012-9e69-436a-863f-215497c4a031" # supply the modelUri from the trainAnalyticsModel.py script
+
+url = url + '/Thingworx/Things/JA_Generic_Analytics_Thing/Services/GetModelStatus'
 headers = {'Content-Type': 'application/json', 'accept': 'application/json',
            "appKey": config["appKey"]}
-modelUri = "7b251012-9e69-436a-863f-215497c4a031"
+
 
 
 def call_thingworx_service():
@@ -27,7 +30,7 @@ def call_thingworx_service():
 response = call_thingworx_service()
 if response.status_code == 200:
     result = json.loads(response.text)
-    status = result["rows"][0]["state"]    #save to file?
+    status = result["rows"][0]["state"]
     print("The current training status for the Analytics model with URI " + modelUri +" is: " + status)
 else:
     print("Request failed with error code: " + str(response))

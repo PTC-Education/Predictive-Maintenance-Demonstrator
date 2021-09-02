@@ -15,6 +15,7 @@ The Servo3 of the demonstrator is supposed to change its position when an additi
 
 - Access to Thingworx Composer
 - Valid Thingworx Application Key
+- Thingworx Analytics
 
 In addition, if you want to use the hardware you need:
 

@@ -1,0 +1,207 @@
+[
+  {
+    "isStatic": false,
+    "fieldName": "asset",
+    "dataType": "STRING",
+    "opType": "ENTITY_ID",
+    "values": [
+     
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo1Angle",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo1Temp",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo1Current",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo1Voltage",
+    "dataType": "DOUBLE",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo2Angle",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo2Temp",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo2Current",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo2Voltage",
+    "dataType": "DOUBLE",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo3Angle",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo3Temp",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo3Current",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "smartServo3Voltage",
+    "dataType": "DOUBLE",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "timeSamplingInterval": 60,
+    "isStatic": false,
+    "fieldName": "time",
+    "dataType": "INTEGER",
+    "opType": "TEMPORAL",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "cycle",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "isDrawing",
+    "dataType": "BOOLEAN",
+    "opType": "BOOLEAN",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  },
+  {
+    "isStatic": false,
+    "fieldName": "RUL",
+    "dataType": "INTEGER",
+    "opType": "CONTINUOUS",
+    "values": [
+      
+    ],
+    "range": {
+      
+    }
+  }
+]

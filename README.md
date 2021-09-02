@@ -7,7 +7,7 @@ In addition, a Google Colab document is provided to make Thingworx Analytics ava
 
 # Structure:
 1. **guides**
-   In this directory you will find the created guides for the use of Thingworx Analytics and guiding questions for the planning of a predictive maintenance project.
+   In this directory you will find the created guides for the use of Thingworx Analytics and a [guideline](/guides/ThingworxAnalyticsTimeSeriesPrediction/GuidelineThingworxAnalytics.pdf) for the planning of a predictive maintenance project. The guides can be used without access to the hardware as well.
 2. **physical_demonstrator**
    This directory contains the software for the communication of the robot arm with a Raspberry Pi or PC via USB
 3. **thingworx_analytics_scripts**

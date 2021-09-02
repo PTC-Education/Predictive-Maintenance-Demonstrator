@@ -12,7 +12,8 @@ json_file = open("config.json")
 config = json.load(json_file)
 json_file.close()
 
-url = 'https://pp-2101111403aw.portal.ptc.io/Thingworx/Things/JA_Generic_Analytics_Thing/Services/TrainAnalyticsModel'
+url = 'https://pp-2101111403aw.portal.ptc.io' # change to your Thingworx instance
+url = url + '/Thingworx/Things/JA_Generic_Analytics_Thing/Services/TrainAnalyticsModel'
 headers = {'Content-Type': 'application/json', 'accept': 'application/json',
            "appKey": config["appKey"]}
 
@@ -144,15 +145,15 @@ def call_thingworx_service(data):
 goal = 1
 feature1 = 1
 data = {'rows': [{'goal': goal, 'feature1': feature1}, {'goal': '2', 'feature1': '2'}]}
-#print(data)
 value = 100
 data['rows'].append({'goal': value, 'feature1': '3'})
 
 response = call_thingworx_service(data)
 if response.status_code == 200:
     result = json.loads(response.text)
-    modelUri = result["rows"][0]["result"]     #save to file?
+    modelUri = result["rows"][0]["result"]
     print("The URI for the Analytics model is: " + modelUri)
+    print("Please copy and save the URI!")
     print("Please call the check model status service next, to see if the training is finished!")
 else:
     print("Request failed with error code: " + str(response))
