@@ -34,5 +34,3 @@ for i in range(len(df_csv.index)):
 
 print("Write to file")
 df_csv.to_csv(r"output_RUL.csv", index=False)
-
-# print(df_new)

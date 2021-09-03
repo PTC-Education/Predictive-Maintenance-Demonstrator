@@ -45,7 +45,7 @@ value = input("Enter s to start:\n") # wait for the user to trigger the data col
 if value == "s":
     arduino.write(bytes('1'+'\n', 'utf-8')) # send Arduino command to start
     time.sleep(0.05) 
-with open('dataset.csv', 'w', newline='') as csvfile: # change the name of the output csv file here
+with open('ThingworxAnalyticsTimeSeriesDataset.csv', 'w', newline='') as csvfile: # change the name of the output csv file here
     processing_loop(csvfile)
 
   

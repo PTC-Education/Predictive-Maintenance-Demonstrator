@@ -3,7 +3,7 @@ import pandas as pd
 # df => pandas DataFrame
 # open csv
 print("Loading csv file")
-df_csv = pd.read_csv(r"ThingworxAnalyticsTimeSeriesDataset.csv")
+df_csv = pd.read_csv(r"output_RUL.csv.csv")
 df_csv['AVG'] = ''
 
 df_new = pd.DataFrame(columns=df_csv.columns)
